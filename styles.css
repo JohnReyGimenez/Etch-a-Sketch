@@ -6,8 +6,8 @@ body {
 }
 
 .container {
-    display: flex;
-    height: 500px;
-    width: 500px;
+    display: grid;
+    height: 320px;
+    width: 320px;
     border: 1px solid black;
 }
