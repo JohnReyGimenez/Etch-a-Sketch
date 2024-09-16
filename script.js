@@ -19,6 +19,11 @@ function createContainer(size) {
 
     for (i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
+        div.addEventListener("mouseover", function() {
+            div.style.backgroundColor = "black"
+        })
+
+        container.insertAdjacentElement("beforeend", div);
     }
 }
 
