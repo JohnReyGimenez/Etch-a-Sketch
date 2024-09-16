@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(){ 
     createContainer(16);
+
+    let select = document.querySelector(".select");
+    select.addEventListener("click", function() {
+        let size = getSize();
+        createContainer(size)
+    })
 });
 
 
@@ -28,5 +34,6 @@ function getSize() {
     }
     else {
         message.innerHTML = "";
+        return input;
     }
 }
