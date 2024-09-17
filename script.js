@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function(){
 function createContainer(size) {
     let container = document.querySelector(".container");
 
+    container.innerHTML = '';
+
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
@@ -24,7 +26,7 @@ function createContainer(size) {
     for (i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
         div.addEventListener("mouseover", colorDiv)
-        container.insertAdjacentElement("beforeend", div);
+        container.appendChild(div); 
     }
 }
 
