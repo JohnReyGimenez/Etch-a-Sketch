@@ -1,3 +1,5 @@
+let color = "black"
+
 document.addEventListener("DOMContentLoaded", function(){ 
     createContainer(16);
 
@@ -19,10 +21,7 @@ function createContainer(size) {
 
     for (i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
-        div.addEventListener("mouseover", function() {
-            div.style.backgroundColor = "black"
-        })
-
+        div.addEventListener("mouseover", colorDiv();)
         container.insertAdjacentElement("beforeend", div);
     }
 }
@@ -41,4 +40,19 @@ function getSize() {
         message.innerHTML = "";
         return input;
     }
+}
+
+function colorDiv() {
+    if (color == "random") {
+        this.style.backrounColor = `hsl(${Math.random() * 360 }, 100%, 50%)`
+    }
+    else {
+        this.style.backrounColor = "black"
+    }
+}
+
+
+function setColor(colorChoice) {
+    let color = colorChoice;
+   
 }
