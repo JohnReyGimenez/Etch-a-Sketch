@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function(){
     let select = document.querySelector(".select");
     select.addEventListener("click", function() {
         let size = getSize();
+        if(size) {
         createContainer(size)
+        }
     })
 });
 
@@ -21,7 +23,7 @@ function createContainer(size) {
 
     for (i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
-        div.addEventListener("mouseover", colorDiv();)
+        div.addEventListener("mouseover", colorDiv)
         container.insertAdjacentElement("beforeend", div);
     }
 }
@@ -29,25 +31,28 @@ function createContainer(size) {
 function getSize() {
     let input = prompt("Size of squares: 1 - 100");
     let message = document.querySelector("#message");
+
     if (input == "") {
         message.innerHTML = "PUT A NUMBER BROO";
     }
 
-    else if (input < 0 || input > 100) {
+    let size = parseInt(input);
+
+    if (isNaN(size) || size < 1 || size > 100) {
         message.innerHTML = "READ BRO DAMN ITS 1 - 100";
     }
     else {
         message.innerHTML = "";
-        return input;
+        return size;
     }
 }
 
 function colorDiv() {
     if (color == "random") {
-        this.style.backrounColor = `hsl(${Math.random() * 360 }, 100%, 50%)`
+        this.style.backroundColor = `hsl(${Math.random() * 360 }, 100%, 50%)`
     }
     else {
-        this.style.backrounColor = "black"
+        this.style.backroundColor = "black"
     }
 }
 
