@@ -51,15 +51,19 @@ function getSize() {
 
 function colorDiv() {
     if (color == "random") {
-        this.style.backroundColor = `hsl(${Math.random() * 360 }, 100%, 50%)`
+        this.style.backgroundColor = `hsl(${Math.random() * 360 }, 100%, 50%)`
     }
     else {
-        this.style.backroundColor = "black"
+        this.style.backgroundColor = "black"
     }
 }
 
 
 function setColor(colorChoice) {
-    let color = colorChoice;
-   
+    color = colorChoice;
+}
+
+function resetContainer() {
+    let divs = document.querySelectorAll("div")
+    divs.forEach((div) => div.style.backgroundColor = "white")
 }
