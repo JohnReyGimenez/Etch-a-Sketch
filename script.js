@@ -10,7 +10,18 @@ document.addEventListener("DOMContentLoaded", function(){
         createContainer(size)
         }
     })
+    document.querySelector(".black").addEventListener("click", function() {
+        setColor('black');
+    });
+    
+    document.querySelector(".random").addEventListener("click", function() {
+        setColor('random');
+    });
+    
+    document.querySelector(".reset").addEventListener("click", resetContainer);
 });
+
+
 
 
 function createContainer(size) {
@@ -64,6 +75,6 @@ function setColor(colorChoice) {
 }
 
 function resetContainer() {
-    let divs = document.querySelectorAll("div")
+    let divs = document.querySelectorAll(".container div")
     divs.forEach((div) => div.style.backgroundColor = "white")
 }
